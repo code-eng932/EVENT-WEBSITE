@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to right, #fd80a8, #fcce42);
+      overflow-x: hidden;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      max-width: 1400px;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 60px;
+      font-size: 22px;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+
+    .navbar-mobile {
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+      background: linear-gradient(135deg, rgba(252, 206, 66, 0.85), rgba(253, 128, 168, 0.85));
+      padding: 20px 30px;
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      font-family: 'Pacifico', cursive;
+      font-size: 22px;
+      color: black;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-mobile p {
+      width: 100%;
+      text-align: right;
+    }
+
+    .navbar-mobile a {
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-mobile a:hover {
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: black;
+      transition: color 0.3s ease;
+    }
+
+    .hamburger:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    #bold {
+      font-size: 60px;
+      font-weight: bolder;
+    }
+
+    .background {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #team-name {
+      font-family: italic;
+      font-size: 30px;
+      font-weight: 600;
+      padding-left: 130px;
+    }
+
+    #present {
+      padding-left: 160px;
+      font-size: 24px;
+    }
+
+    .intro {
+      padding-top: 150px;
+      width: 45vw;
+      margin-left: 75px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .about {
+      padding-top: 25px;
+      font-size: 22px;
+      font-weight: 400;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .sticker {
+      position: absolute;
+      right: 60px;
+      top: 100px;
+    }
+
+    .button {
+      padding-top: 70px;
+      padding-left: 350px;
+    }
+
+    button {
+      background-color: rgb(83, 239, 164);
+      width: 150px;
+      height: 50px;
+      font-size: 25px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 5px 5px rgba(48, 47, 47, 0.342);
+      font-family: 'Pacifico', cursive;
+    }
+
+    button:hover {
+      background-color: rgb(18, 232, 160);
+    }
+
+    .upcoming-events {
+      padding-left: 75px;
+      padding-top: 120px;
+      font-size: 36px;
+      font-weight: 600;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .card-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 30px;
+      max-width: 1260px;
+      padding-top: 50px;
+    }
+
+    .card-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      flex-shrink: 0;
+      font-size: 28px;
+      font-weight: 200;
+      width: 400px;
+      height: 500px;
+      background-color: rgba(66, 69, 76, 0.5);
+      transition: all 0.3s ease;
+      transform: scale(0.9);
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .pic {
+      background-color: black;
+      width: 360px;
+      height: 370px;
+      margin: 20px;
+    }
+
+    .pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .description {
+      padding-left: 20px;
+      color: white;
+    }
+
+    .footer {
+      padding: 60px 75px;
+      font-size: 19px;
+      font-weight: 500;
+      font-family: 'Quicksand', sans-serif;
+      background-color: rgba(66, 69, 76, 0.4);
+      color: white;
+      width: 78vw;
+      margin: 70px auto;
+    }
+
+    .footer #transition:hover {
+      color: #FF1493;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: space-between;
+    }
+
+    #heading {
+      font-size: 35px;
+      font-weight: 600;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .copyright {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    #rights {
+      font-family: 'Pacifico', cursive;
+      font-weight: 600;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .intro,
+      .button {
+        margin-left: 20px;
+        padding-left: 0;
+        width: 85vw;
+      }
+
+      .button {
+        padding-left: 20px;
+      }
+
+      .sticker img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .sticker {
+        right: 10px;
+        top: 50px;
+      }
+
+      .footer {
+        width: 90vw;
+        padding: 30px;
+      }
+
+      .flex {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div class="navbar-container">
+      <div id="brand"><strong>VibeCrafters</strong></div>
+      <div class="navbar">
+        <p><a href="index.html">Home</a></p>
+        <p><a href="event.html">Festivals & Events</a></p>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="contact page.html">Contact</a></p>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <div class="navbar-mobile" id="mobileMenu">
+      <p><a href="index.html">Home</a></p>
+      <p><a href="event.html">Festivals & Events</a></p>
+      <p><a href="about.html">About Us</a></p>
+      <p><a href="contact page.html">Contact</a></p>
+    </div>
+
+    <div class="background">
+      <div class="intro">
+        <p id="team-name">VibeCrafters</p>
+        <p id="present">present</p><br>
+        <p id="bold">Your Summer Adventure Awaits!!</p>
+        <div class="about">
+          <p>Let your curiosity guide you through the very best in music, dance, comedy, poetry, theatre,
+            literature, podcasts, family activities and wellness.</p><br>
+          <p>Join us for a weekend of discovery from 19 - 22 May</p>
+        </div>
+      </div>
+      <div class="sticker">
+        <img src="Sticker1.png" alt="sticker" width="600px">
+      </div>
+      <div class="button">
+        <button onclick="window.location.href='contact page.html'">Join Now</button>
+      </div>
+
+      <div class="upcoming-events">
+        <p>Upcoming Festivals & Events</p>
+        <div class="card-container">
+          <div class="card">
+            <div class="pic">
+              <img src="https://i.pinimg.com/736x/40/cd/ca/40cdcaa1f81f544cba016ea5553eb00c.jpg" alt="pic1">
+            </div>
+            <div class="description">
+              <p>Hello Summer Party</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pic">
+              <img src="https://i.pinimg.com/736x/45/2b/7e/452b7e85b4e40605ad35f0e582d24411.jpg" alt="pic2">
+            </div>
+            <div class="description">
+              <p>Boat Party</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pic">
+              <img src="https://i.pinimg.com/736x/0c/51/25/0c512501ba97e2d684773ab9eebdc87c.jpg" alt="pic3">
+            </div>
+            <div class="description">
+              <p>Tropical Party</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="pic">
+              <img src="https://i.pinimg.com/736x/ae/00/1f/ae001fbe3c2eab0daf40cdbbea228af4.jpg" alt="pic4">
+            </div>
+            <div class="description">
+              <p>Summer Music Party</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer">
+          <div class="flex">
+            <div class="contact">
+              <p id="heading">Contact Us:</p><br>
+              <p id="transition">Email : VibeCrafters@gmail.com</p>
+              <p id="transition">Phone : (+91)12345-67890</p>
+            </div>
+            <div class="follow">
+              <p id="heading">Follow us on:</p><br>
+              <p id="transition"><i class="fab fa-instagram"></i> @_VibeCrafters</p>
+              <p id="transition"><i class="fab fa-x-twitter"></i> @_VibeCrafters</p>
+              <p id="transition"><i class="fab fa-linkedin"></i> Vibe_Crafters</p>
+            </div>
+          </div>
+          <div class="copyright">
+            <p id="rights">&copy; 2025 VibeCrafters Collective. All rights reserved</p>
+            <p>Based in Bhopal, India</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+
+</html>

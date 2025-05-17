@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festivals & Events</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+
+    .navbar {
+      background: linear-gradient(to right, #f0f5c3, #1ab4f4);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-family: 'Pacifico', cursive;
+      font-weight: bold;
+      color: #130707d4;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #130707d4;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #130707d4;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: white;
+    }
+
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .nav-links.open {
+        max-height: 300px;
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+
+
+    .container {
+      background: linear-gradient(to right, #f0f5c3, #1ab4f4);
+      padding-bottom: 50px;
+    }
+
+    #heading {
+      font-size: 48px;
+      font-weight: bolder;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    #text {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      padding: 0 20px 40px 20px;
+    }
+
+    .card-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+
+    .card-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Past Experiences */
+    .past-experiences {
+      padding: 40px 20px;
+    }
+
+    .text2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card-left,
+    .card-right {
+      background-color: #130707d4;
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      #heading {
+        font-size: 36px;
+      }
+
+      #text {
+        font-size: 18px;
+      }
+
+      .card img {
+        width: 250px;
+        height: 350px;
+      }
+
+      .card-left,
+      .card-right {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">RGPV Events</div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="event.html">Festivals & Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact page.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <div class="header">
+      <p id="heading" id="home">Festivals & Events</p>
+      <p id="text">Take a look at the Festivals & Events organised by our team</p>
+    </div>
+
+    <div class="card-container" id="festivals">
+
+    </div>
+
+    <div class="past-experiences" id="about">
+      <p id="heading">Our Past Experiences</p>
+      <div class="text2">
+        <div class="card-right">
+          <p>At Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), our cultural initiatives have
+            consistently celebrated creativity, unity, and student talent.</p>
+          <br />
+          <p>The "RGPV Jammers Live" event during Cultural Fest'24 showcased electrifying musical performances,
+            reflecting the vibrant spirit of our campus community.</p>
+        </div>
+
+        <div class="card-left">
+          <p>Events like "Udaan 2.0" provided a platform for architectural innovation and student-led exhibitions,
+            highlighting the ingenuity of our students.</p>
+          <br />
+          <p>Through these events, we've fostered an environment where cultural expression thrives, and students
+            are empowered to share their passions with the broader community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("open");
+    }
+
+
+    const images = [
+      "https://i.pinimg.com/736x/54/50/a6/5450a63030fcceecf902bee853ab260f.jpg",
+      "https://i.pinimg.com/736x/ec/9d/b5/ec9db594a74cc6269190f805ca023fd6.jpg",
+      "https://i.pinimg.com/736x/6a/66/95/6a6695b059f5e0fac81dc91b1ebd8295.jpg",
+      "https://i.pinimg.com/736x/fa/93/d8/fa93d8cde506fda92d0c4039ee52c417.jpg",
+      "https://i.pinimg.com/736x/10/00/b1/1000b188ffefa80a92a76fc1e4db6122.jpg"
+    ];
+
+    const container = document.querySelector(".card-container");
+
+    images.forEach(src => {
+      const card = document.createElement("div");
+      card.className = "card";
+      const img = document.createElement("img");
+      img.src = src;
+      card.appendChild(img);
+      container.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

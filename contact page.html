@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff4f8;
+    }
+
+    nav {
+      background-color: #fd80a8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 8px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #e96a94;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px;
+      border-radius: 3px;
+    }
+
+
+    .titleofpg {
+      background-color: #fd80a8;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 30px auto;
+      width: fit-content;
+      border-radius: 10px;
+    }
+
+    .bigcontainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      background-color: #fcce42;
+      padding: 40px 20px;
+      border-radius: 15px;
+      max-width: 1300px;
+      width: 100%;
+    }
+
+    .container1 {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle1,
+    .circle2 {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .circle1 {
+      background-color: aquamarine;
+      top: -30px;
+      left: 14px;
+    }
+
+    .circle2 {
+      background-color: #1a3129;
+      bottom: -38px;
+      right: 0px;
+    }
+
+    .form-box {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-box p,
+    .form-box span,
+    .form-box div {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .align {
+      text-align: left;
+    }
+
+    .headerform1 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fd80a8;
+    }
+
+    input,
+    textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    button {
+      background-color: #fd80a8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #e96a94;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fd80a8;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+    
+
+    .circle1,
+    .circle2 {
+      height: 80px;
+      width: 80px;
+    }
+
+    .circle1 {
+      left: 5px;
+      top: -12px;
+    }
+
+    .circle2 {
+      right: 5px;
+      bottom: -12px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+    }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="logo">Festive Hub</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="event.html">Festivals & Events</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+
+  <div class="bigcontainer">
+    <div class="titleofpg">CONTACT PAGE</div>
+
+    <div class="container">
+      <div class="container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="form-box">
+          <p><span class="headerform1">Contact us</span></p>
+          <p>You can contact us through the following platforms :</p>
+          <div class="align">
+            <p><img src="insta.svg" alt=""> Instagram</p>
+            <p><img src="snapchat.svg" alt=""> Snapchat</p>
+            <p><img src="facebook.svg" alt=""> Facebook</p>
+            <p><img src="linkedin.svg" alt=""> LinkedIn</p>
+            <p><img src="twitter.svg" alt=""> Twitter</p>
+            <p><img src="email.svg" alt=""> Email: <strong>abcd.com</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+
+        <div class="form-box">
+          <p class="headerform1">Interact with us</p>
+          <form id="contactForm" method="post"
+            action="https://script.google.com/macros/s/AKfycby_Dwmb2ujvp3yXf-UciHS59MRHnFMeJAhKsZXAnivdMGIsIuzEatqt3A_G27T3A43B/exec">
+
+            <div>
+              <input type="text" placeholder="Enter Name" name="name" required />
+            </div>
+            <div>
+              <input type="email" placeholder="Enter Email" name="email" required />
+            </div>
+            <div>
+              <textarea rows="2" placeholder="Enter Remarks" name="remarks" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+          <p id="successMessage" style="color: green; margin-top: 10px; display: none;">
+            Details submitted successfully!
+          </p>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+
+      const successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+
+      this.reset();
+
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
